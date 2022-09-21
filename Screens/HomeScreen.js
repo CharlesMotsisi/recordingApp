@@ -1,41 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from './Screens/LoginScreen'
-import HomeScreen from './Screens/HomeScreen'
-
-const Stack = createNativeStackNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} /> 
-        <Stack.Screen options={{headerShown: false}} name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
-
-/*import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Audio } from 'expo-av';
+//import firebase from '../firebase'
 
-export default function App() {
+export default function HomeScreen() {
   const [recording,setRecording] = React.useState();
   const [recordings,setRecordings] = React.useState([]);
   const [message,setMessage] = React.useState();
+
 
   async function startRecording(){
     try{
@@ -73,6 +46,7 @@ export default function App() {
       file:recording.getURI()
     });
     setRecordings(updatedRecordings);
+   
   }
   
   function getDurationFormatted(millis){
@@ -107,6 +81,7 @@ export default function App() {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -127,4 +102,4 @@ const styles = StyleSheet.create({
     margin: 16
   }
 
-});*/
+});
